@@ -54,8 +54,9 @@ const cartbtn = document.querySelectorAll(".shop button");
         var pimage = product.querySelector("img").src
         var pname = product.querySelector("h3").innerText
         var pprice = product.querySelector("span").innerText
-        console.log(pprice)
+        // console.log(pprice)
          addcart(pimage,pname,pprice)
+         total()
        }
     })
 })
@@ -64,11 +65,40 @@ function addcart(pimage,pname,pprice){
     // tạo tr
     var addtr =  document.createElement("tr")
     // nội dung tr
-    var trContent = '<tr> <td><img src="'+pimage+'" alt="" style="width:70px; height:70px;"> <span class="title">'+pname+'</span></td><td><p><span>'+pprice+'</span><sup>đ</sup></p></td>  <td><input type="number" value="1" min="0" style="width:30px; outline: none;text-align: center; border: 0.2rem solid black"> </td> <td style="cursor: pointer;">Xóa</td> </tr>'
+    var trContent = '<tr> <td style="max-width:20rem;"><img src="'+pimage+'" alt="" style="width:70px; height:70px;"> <span class="title">'+pname+'</span></td><td><p><span class="price">'+pprice+'</span><sup>đ</sup></p></td>  <td><input type="number" value="1" min="0" style="width:30px; outline: none;text-align: center; border: 0.2rem solid black"> </td> <td style="cursor: pointer;">Xóa</td> </tr>'
     // thêm content vào tr
     addtr.innerHTML = trContent
     // chọn phần tử tbody
     var cartTable = document.querySelector("tbody")
     // thêm dòng vào t body
     cartTable.append(addtr)
+}
+
+
+// Tính tổng tiền 
+function total(){
+    // trỏ vào dòng chứa tt
+    var cartItem = document.querySelectorAll("tbody tr")
+    // console.log(cartItem)
+   var productCount = 0
+   var totalPrice = 0
+   for (let i=0;i<cartItem.length;i++){
+     var inputValue = cartItem[i].querySelector("input").value
+     var productPrice = cartItem[i].querySelector(".price").innerHTML
+    //  console.log(productPrice);
+    var total = inputValue*productPrice*1000
+    // console.log(total);
+        // productCount += 1
+         totalPrice += total
+        console.log(totalPrice)
+   }
+//    var cartTotalPrice = document.querySelector(".total-price span")
+//    cartTotalPrice.innerHTML = totalPrice.toLocaleString('de-DE')
+//    var cartCount = document.querySelector(".count")
+//   //  console.log(cartCount)
+//   cartCount.innerHTML = productCount
+  //  console.log(cartTotalPrice) 
+  var cartTotal = document.querySelector(".total-price span")
+  cartTotal.innerHTML  = totalPrice.toLocaleString('de-DE')
+  console.log(cartTotal);
 }

@@ -201,6 +201,32 @@
 
     </section>
 
+    <section class="cart">
+        <form action="" method="post">
+            <h2>Giỏ hàng</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Sản phẩm</th>
+                        <th>Giá</th>
+                        <th>Số lượng</th>
+                        <th>Chọn</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- <td><img src="../image/product1.jpg" alt="" style="width:70px; height:70px;">
+                    Son môi ádsafsadfsd</td>
+                    <td><p><span>320.000</span><sup>đ</sup></p></td>
+                    <td><input type="number" value="1" min="0" style="width:30px; outline: none;text-align: center; border: 0.2rem solid black"> </td>
+                    <td style="cursor: pointer;">Xóa</td> -->
+                </tbody>
+            </table>
+            <div class="total-price" style="text-align: right;">
+                <p style="font-weight: bold;">Tổng tiền:<span>320.000</span><sup>đ</sup></p>
+            </div>
+        </form>
+    </section>
+
     <section class="message" style="background: url(../image/banner.jpg) no-repeat;">
         <div class="content">
             <span>Ưu đãi <span>đặc biệt</span></span>
@@ -209,6 +235,6 @@
         <a href="#" class="btn">Mua ngay</a>
         </div>
     </section>
-    <script src="../script.js"></script>
+    <script src="../script/script.js"></script>
 </body>
 </html>
