@@ -56,7 +56,9 @@ const cartbtn = document.querySelectorAll(".shop button");
         var pprice = product.querySelector("span").innerText
         // console.log(pprice)
          addcart(pimage,pname,pprice)
-         total()
+         cartTotal()
+         deleteCart()
+         changeTotal()
        }
     })
 })
@@ -65,18 +67,29 @@ function addcart(pimage,pname,pprice){
     // tạo tr
     var addtr =  document.createElement("tr")
     // nội dung tr
-    var trContent = '<tr> <td style="max-width:20rem;"><img src="'+pimage+'" alt="" style="width:70px; height:70px;"> <span class="title">'+pname+'</span></td><td><p><span class="price">'+pprice+'</span><sup>đ</sup></p></td>  <td><input type="number" value="1" min="0" style="width:30px; outline: none;text-align: center; border: 0.2rem solid black"> </td> <td style="cursor: pointer;">Xóa</td> </tr>'
+    var trContent = '<tr> <td style="max-width:20rem;"><img src="'+pimage+'" alt="" style="width:70px; height:70px;"> <span class="title">'+pname+'</span></td><td><p><span class="price">'+pprice+'</span><sup>đ</sup></p></td>  <td><input type="number" value="1" min="0" style="width:30px; outline: none;text-align: center; border: 0.2rem solid black"> </td> <td style="cursor: pointer;" class="delete">Xóa</td> </tr>'
+    var cartItem = document.querySelectorAll("tbody tr")
+    for(var i=0; i<cartItem.length;i++){
+      var productTrung = document.querySelectorAll(".title")
+     // console.log(productTrung)
+        if(productTrung[i].innerHTML == pname){
+          alert("Sản phẩm đã tồn tại trong giỏ hàng")
+          return
+        
+      }
+    }
     // thêm content vào tr
     addtr.innerHTML = trContent
     // chọn phần tử tbody
     var cartTable = document.querySelector("tbody")
     // thêm dòng vào t body
     cartTable.append(addtr)
-}
 
+}
+ 
 
 // Tính tổng tiền 
-function total(){
+function cartTotal(){
     // trỏ vào dòng chứa tt
     var cartItem = document.querySelectorAll("tbody tr")
     // console.log(cartItem)
@@ -85,20 +98,62 @@ function total(){
    for (let i=0;i<cartItem.length;i++){
      var inputValue = cartItem[i].querySelector("input").value
      var productPrice = cartItem[i].querySelector(".price").innerHTML
-    //  console.log(productPrice);
-    var total = inputValue*productPrice*1000
-    // console.log(total);
-        // productCount += 1
+    //   console.log(productPrice);
+    const total = inputValue*productPrice*1000
+       console.log(total);
+          productCount += 1
          totalPrice += total
-        console.log(totalPrice)
+        // console.log(totalPrice)
    }
 //    var cartTotalPrice = document.querySelector(".total-price span")
 //    cartTotalPrice.innerHTML = totalPrice.toLocaleString('de-DE')
-//    var cartCount = document.querySelector(".count")
-//   //  console.log(cartCount)
-//   cartCount.innerHTML = productCount
+   var cartCount = document.querySelector(".count")
+//     console.log(cartCount)
+  cartCount.innerHTML = productCount
   //  console.log(cartTotalPrice) 
   var cartTotal = document.querySelector(".total-price span")
   cartTotal.innerHTML  = totalPrice.toLocaleString('de-DE')
-  console.log(cartTotal);
+//   console.log(cartTotal);
 }
+
+
+// xóa giỏ hanfg
+function deleteCart(){
+    var cartItem = document.querySelectorAll("tbody tr")
+    for (var i=0;i<cartItem.length;i++){
+        var productD = document.querySelectorAll(".delete")
+        // console.log(productD);
+        productD[i].addEventListener("click",function(event){
+            var cartDelete = event.target
+            var cartItem = cartDelete.parentElement
+            console.log(cartItem);
+            cartItem.remove()
+            cartTotal()
+        })
+    }
+}
+
+// số lượng
+function changeTotal(){
+    var cartItem = document.querySelectorAll("tbody tr")
+    for (var i=0;i<cartItem.length;i++){
+        var inputValue = cartItem[i].querySelector("input")
+        inputValue.addEventListener("change",function(){
+                cartTotal()
+        })
+    }
+}
+
+// mở đóng gh
+// mở đóng giỏ hàng
+const cartBtn = document.querySelector(".fa-xmark")
+ const cartShow = document.querySelector(".fa-cart-shopping")
+ 
+cartShow.addEventListener("click",function(event){
+    document.querySelector(".cart").style.right = "0"
+   //console.log(cartShow)
+})
+
+cartBtn.addEventListener("click",function(event){
+  document.querySelector(".cart").style.right = "-100%"
+})

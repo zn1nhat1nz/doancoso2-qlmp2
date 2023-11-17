@@ -35,6 +35,7 @@
         <div class="icons">
             <div class="fa-solid fa-bars" id="menu-btn"></div>
             <i class="fa-solid fa-cart-shopping"></i>
+            <span class="count">0</span>
         </div>
         <div class="xoay"></div>
     </section>
@@ -79,7 +80,7 @@
             </a>
 
             <a href="#" class="box">
-                <img src="../image/category1.png" alt="" width="200px" height="200px">
+                <img src="../image/category2.png" alt="" width="200px" height="200px">
                 <h1>Son</h1>
             </a>
 
@@ -191,11 +192,23 @@
                 </div>
                  <div class="content">
                      <h3>Serum Thảo Dược Kiehl's Vital</h3>
-                     <div class="price"><span>1.750.000</span>VNĐ</div>
+                     <div class="price"><span>750.000 </span>VNĐ</div>
                  </div>
              </div>
-        </div>
 
+             <!-- <div class="box">
+                <div class="product">
+                 
+                 <a href="#shop" id="">
+                     <img src="../image/product7.png" alt="" >
+                 </a>
+                 <button class="fa-solid fa-cart-plus"></button>
+                </div>
+                 <div class="content">
+                     <h3>Serum Thảo Dược Kiehl's Vital</h3>
+                     <div class="price"><span>1.750.000</span>VNĐ</div>
+                 </div>
+             </div> -->
         </div>
 
 
@@ -203,6 +216,7 @@
 
     <section class="cart">
         <form action="" method="post">
+        <i class="fa-solid fa-xmark" style="cursor: pointer"></i>
             <h2>Giỏ hàng</h2>
             <table>
                 <thead>
@@ -222,8 +236,18 @@
                 </tbody>
             </table>
             <div class="total-price" style="text-align: right;">
-                <p style="font-weight: bold;">Tổng tiền:<span>320.000</span><sup>đ</sup></p>
+                <p style="font-weight: bold;">Tổng tiền:<span>0</span><sup></sup></p>
             </div>
+           <div class="box">
+           <div class="top"></div>
+           <button>Thanh toán</button>
+           <div class="bot"></div>
+                <div class="right"></div>
+                    
+                    <div class="left"></div>
+            
+            
+           </div>
         </form>
     </section>
 

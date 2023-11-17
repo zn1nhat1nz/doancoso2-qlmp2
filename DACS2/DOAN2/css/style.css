@@ -75,8 +75,21 @@ section{
     position: sticky;
 }
 .header .icons{
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: bolder;
+    border-radius: 50%;
+}
+
+.header .icons i{
+    
+    box-shadow: 0 0 20px white;
+}
+
+.header .icons span{
+   color: red;
+   margin-left: -1.5rem;
+   font-size: 2rem;
+   margin-top: -4rem;
 }
 
 .header .logo i{
@@ -374,6 +387,89 @@ section{
     border-bottom: 0.2rem solid black;
     padding: 12px;
 }
+
+.cart{
+    position: fixed;
+    height: 85vh;
+    width: 40rem;
+    background-color: rgb(218, 188, 218);
+    top: 7.5rem;
+    right: 0;
+    overflow-y: scroll;
+}
+
+.cart button{
+    font-size: 1.5rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 2rem;
+    cursor: pointer;
+    border-radius:20px;
+    box-shadow: 2px 2px 4px black;
+}
+/* .cart .active{
+    right: 0;
+} */
+
+.cart .box .top{
+    /* position: absolute; */
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 3px;
+    /* border: 2rem solid #222 ; */
+    background: linear-gradient(to right, rgb(89, 246, 110) ,rgb(8, 141, 12));
+    animation: ant-top 2s linear infinite;
+}
+
+@keyframes ant-top{
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(100%);
+    }
+}
+.cart .box{
+    overflow-x: hidden;
+}
+.cart .box .bot{
+    /* position: absolute; */
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 3px;
+    /* border: 2rem solid #222 ; */
+    background: linear-gradient(to left, rgb(89, 246, 110) ,rgb(8, 141, 12));
+    animation: ant-bot 2s linear infinite;
+}
+
+@keyframes ant-bot{
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(-100%);
+    }
+}
+/* .cart .box .right{
+  
+    top: 50%;
+    right: 0;
+    height: 100%;
+    width: 3px;
+    border: 1rem solid #222 ;
+    background: linear-gradient(to bottom, rgb(89, 246, 110) ,rgb(8, 141, 12));
+    animation: ant-right 2s linear infinite;
+    
+}
+@keyframes ant-right{
+    0%{
+        transform: translateY(-100%);
+    }
+    100%{
+        transform: translateY(100%);
+    }
+} */
 /*-----------------------------------*\
 #RESPONSIVE
 \*-----------------------------------*/
