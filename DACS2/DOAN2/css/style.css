@@ -370,6 +370,7 @@ section{
     margin: auto;
     text-align: center;
     font-size: 2rem;
+    box-shadow: -2px 0 10px cyan;
 }
 .cart h2{
     font-size: 3rem;
@@ -394,7 +395,7 @@ section{
     width: 40rem;
     background-color: rgb(218, 188, 218);
     top: 7.5rem;
-    right: 0;
+    right:-100%;
     overflow-y: scroll;
 }
 
@@ -471,6 +472,12 @@ section{
     }
 } */
 /*-----------------------------------*\
+#LOGIN
+\*-----------------------------------*/
+.wrapper{
+    
+ }
+/*-----------------------------------*\
 #RESPONSIVE
 \*-----------------------------------*/
 @media (max-width: 991px){
@@ -527,4 +534,8 @@ section{
         margin-left: 2rem;
         
       }
+    .cart{
+        top: 10rem;
+        /* right: 5rem; */
+    }
 }

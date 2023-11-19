@@ -1,3 +1,6 @@
+<?php 
+//    include 'connectdb.php'
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,7 +28,7 @@
         </div>
         
         <nav class="navbar">
-            
+                    <a href="../login/login.php" class="navbar-link" data-nav-link style="font-weight: bold; color:red; text-shadow: 2px 2px 3px black;" >Đăng nhập</a>
                     <a href="#" class="navbar-link" data-nav-link>Trang chủ</a>
                     <a href="#" class="navbar-link" data-nav-link>Cửa hàng</a>
                     <a href="#" class="navbar-link" data-nav-link>Mẫu hàng</a>
