@@ -1,3 +1,6 @@
+<?
+   include 'connectdb.php'
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +13,8 @@
     <div class="boxLogin">
         <div class="top"></div>
         <div class="right"></div>
+        <div class="bot"></div>
+        <div class="left"></div>
             <form action="" method="post">
             
             <h1 style="text-align: center;">Đăng nhập</h1>
@@ -19,15 +24,34 @@
                 </div> <br>
                 <div class="inputBox">
                     <!-- <span>Mật khẩu</span> -->
-                    <input type="text" name="password"  placeholder="Mật khẩu" required="required">
+                    <input type="password" name="password"  placeholder="Mật khẩu" required="required">
                 </div> <br>
                 <div class="links">
                     <a href="">Quên mật khẩu?</a>
-                    <a href="">Đăng kí</a>
+                    <a href="./sign-up.php">Đăng kí</a>
                 </div> <br>
-                <input type="submit" value="Đăng nhập" class="sign-in">
+                <input type="submit" value="Đăng nhập" class="sign-in" name="sign-in">
             </form>
     </div>
-    
+    <!-- <?php
+        $btn = filter_input(INPUT_POST,'sign-in');
+        if(!empty($btn) && $btn="Đăng nhập"){
+            $username = filter_input(INPUT_POST,'user'); 
+            $password = filter_input(INPUT_POST,'password');
+            $query = "SELECT*FROM accounttb";
+            $result = mysqli_query($link,$query);
+            if(mysqli_num_rows($result)>0){
+              while($row = mysqli_fetch_array($result)){
+                 $uid = $row['user_id'];
+                 $un  = $row['user_name'];
+                 $up = $row['user_password'];
+                 $ue = $row['user_email'];
+              }
+            } 
+            if($username==$uid && $password==$up){
+                echo "Đăng nhập thành công";
+            }
+        }
+    ?> -->
 </body>
 </html>
