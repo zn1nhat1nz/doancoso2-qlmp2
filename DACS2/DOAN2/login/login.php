@@ -1,5 +1,5 @@
 <?
-   include 'connectdb.php'
+   include '../pages/connectdb.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +15,7 @@
         <div class="right"></div>
         <div class="bot"></div>
         <div class="left"></div>
-            <form action="" method="post">
+            <form action="<?php echo $_SERVER['PHP_SEFL'];?>" method="post">
             
             <h1 style="text-align: center;">Đăng nhập</h1>
                 <div class="inputBox">
@@ -33,11 +33,12 @@
                 <input type="submit" value="Đăng nhập" class="sign-in" name="sign-in">
             </form>
     </div>
-    <!-- <?php
+     <?php
         $btn = filter_input(INPUT_POST,'sign-in');
         if(!empty($btn) && $btn="Đăng nhập"){
-            $username = filter_input(INPUT_POST,'user'); 
-            $password = filter_input(INPUT_POST,'password');
+             $username = filter_input(INPUT_POST,'user'); 
+             $password = filter_input(INPUT_POST,'password');
+             $link = new mysqli('localhost','root','','dacs2_cosmetic');
             $query = "SELECT*FROM accounttb";
             $result = mysqli_query($link,$query);
             if(mysqli_num_rows($result)>0){
@@ -48,10 +49,11 @@
                  $ue = $row['user_email'];
               }
             } 
-            if($username==$uid && $password==$up){
-                echo "Đăng nhập thành công";
+            if($username== $un && $password==$up ){
+                // echo "Đăng nhập thành công";
             }
+            // else die("Thất bại");
         }
-    ?> -->
+    ?> 
 </body>
 </html>

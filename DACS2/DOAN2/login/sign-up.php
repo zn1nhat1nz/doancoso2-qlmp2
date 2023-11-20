@@ -35,9 +35,24 @@
                     <a href="">Quên mật khẩu?</a>
                     <a href="./login.php">Đăng nhập</a>
                 </div> <br>
-                <input type="submit" value="Đăng kí" class="sign-in">
+                <input type="submit" value="Đăng kí" class="sign-in" name="addbtn">
             </form>
     </div>
+    <?php
+        $add = filter_input(INPUT_POST,'addbtn');
+        if(!empty($add) && $add="Đăng kí"){
+            $uid = filter_input(INPUT_POST,'user',FILTER_VALIDATE_INT);
+            $un = filter_input(INPUT_POST,'txtcid',FILTER_VALIDATE_INT);
+            $up = filter_input(INPUT_POST,'txtsid',FILTER_VALIDATE_INT);
+            $grade = filter_input(INPUT_POST,'txtgrade');
+            if(empty($erid)|| empty($sid)|| empty($cid)|| empty($grade)){
+                echo "<script> alert('Vui lòng nhập đủ thông tin'); </script>";
+            } else{
+                $query = "INSERT INTO enrollmenttable VALUES('$erid','$sid','$cid','$grade')";
+                mysqli_query($link,$query) or die("Thêm dữ liệu thất bại");
+            }
+        }
     
+    ?>
 </body>
 </html>
