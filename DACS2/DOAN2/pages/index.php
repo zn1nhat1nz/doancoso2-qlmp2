@@ -1,15 +1,18 @@
 <?php 
 //    include 'connectdb.php'
+        session_start();
+        // include '../user/login.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Phong Minh Cosmectics</title>
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"> -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../asset/fontawesome-free-6.4.2-web/css/all.min.css">
+    
 </head>
 <body>
     
@@ -20,7 +23,7 @@
                 <!-- <span>
                 <canvas id="myCanvas" width="200" height="40"></canvas>
             </span> -->
-            Phong Minh Comectics
+            Phong Minh Cosmectics
           
         </i>
             <!--  -->
@@ -28,7 +31,7 @@
         </div>
         
         <nav class="navbar">
-                    <a href="../login/login.php" class="navbar-link" data-nav-link style="font-weight: bold; color:red; text-shadow: 2px 2px 3px black;" >Đăng nhập</a>
+                    
                     <a href="#" class="navbar-link" data-nav-link>Trang chủ</a>
                     <a href="#" class="navbar-link" data-nav-link>Cửa hàng</a>
                     <a href="#" class="navbar-link" data-nav-link>Mẫu hàng</a>
@@ -41,11 +44,22 @@
             <span class="count">0</span>
         </div>
         <div class="xoay"></div>
+        <!-- <a href="../user/login.php" class="navbar-link user" data-nav-link style="font-weight: bold; color:red; text-shadow: 2px 2px 3px black;" >Đăng nhập</a> -->
+        <?php 
+        //  echo $un;
+        // echo $_SESSION['username'];
+           if(isset($_SESSION['username']) && $_SESSION['username']){
+            echo '<a href="../user/user_info/info.php" style="color:red">Xin chào:</a>' . $_SESSION['username'];
+            echo '<a href="../user/logout.php">Đăng xuất</a>';
+           }else {
+            echo '<a href="../user/login.php" style="font-size:2rem; text-shadow: 2px 2px 4px red">Đăng nhập</a>';
+           }
+        ?>
     </section>
     <section class="home" id="home">
         <div class="slide active" style="background: url(../image/home.jpg) no-repeat;background-size: cover; background-position: center;">
                 <div class="content">
-                    <span>CONTENT1</span>
+                    <h1>CONTENT</h1>
                     <h3>ákdnadasjfjbasdjbgadhjgfjhagfgadshfbjd <br>
                         sajfgsdgfjhgasfgasjhgajhsf <br>
                         sậhsfbajhsbfjasbfjasbfj

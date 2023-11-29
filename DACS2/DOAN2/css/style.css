@@ -1,5 +1,5 @@
 /* body{
-    background-color: rgb(224, 193, 147);
+    background-image: url(../image/Black-Galaxy-Wallpapers.jpg);
 } */
 *{
     margin: 0;
@@ -15,6 +15,7 @@ html{
     overflow-x: hidden;
     scroll-behavior: smooth;
     scroll-padding-top: 7rem;
+    
 }
 html::-webkit-scrollbar-track{ /*không gian trống bên dưới thanh tiến trình.*/
     background: transparent;
@@ -37,8 +38,8 @@ section{
     /* width: ; */
     position: absolute;
     border-radius: 50px;
-    max-width: 40rem;
-    width: 40rem ;
+    max-width: 45rem;
+    width: 42rem ;
     height: 5rem;
     margin-left: -12px;
     box-shadow: 3px 0 1px -1px #fff,
@@ -67,6 +68,7 @@ section{
     right: 0;
     z-index: 1000;
     background: rgb(200, 192, 192);
+    /* background-image: url(../image/Black-Galaxy-Wallpapers.jpg); */
     display: flex; /*1 dòng*/
     align-items: center;
     justify-content: space-between;
@@ -93,10 +95,10 @@ section{
 }
 
 .header .logo i{
-    color: rgb(199, 31, 255);
+    color: rgb(181, 24, 81);
     font-size: 2.5rem;
     margin-bottom: 2px;
-    text-shadow: 2px 2px 5px cyan;
+    text-shadow: 2px 2px 5px rgb(234, 121, 147);
     text-transform: uppercase;
 }
 .header a{
@@ -174,15 +176,21 @@ section{
     text-align: left;
     margin-left: -2rem;
 }
-.home .slide .content span{
+.home .slide .content h1{
     /* color: aliceblue; */
-    font-size: 4rem;
+    font-size: 5rem;
     text-shadow:  0 0 0 white,
-    0 0 2px rgb(13, 166, 197),
+    /* 0 0 2px rgb(13, 166, 197),
     0 0 4px rgb(13, 166, 197),
     0 0 6px rgb(13, 166, 197),
     0 0 8px rgb(13, 166, 197),
-    0 0 10px rgb(13, 166, 197);
+    0 0 10px rgb(13, 166, 197); */
+    0 0 2px rgb(234, 121, 147),
+    0 0 4px rgb(234, 121, 147),
+    0 0 6px rgb(234, 121, 147),
+    0 0 8px rgb(234, 121, 147),
+    0 0 10px rgb(234, 121, 147);
+    text-transform: bold;
 }
 .home .slide .content h3{
     color: aliceblue;
@@ -219,9 +227,14 @@ section{
     font-size: 5rem;
     /* margin-left: -8rem; */
     text-align: center;
-    text-shadow: 0 0 2px white,
+    /* text-shadow: 0 0 2px white,
                  0 0 4px cyan,
-                 0 0 6px cyan;
+                 0 0 6px cyan; */
+    text-shadow:  0 0 2px rgb(234, 121, 147),
+    0 0 4px rgb(234, 121, 147),
+    0 0 6px rgb(234, 121, 147),
+    0 0 8px rgb(234, 121, 147),
+    0 0 10px rgb(234, 121, 147);
 }
 .category .box-container{
     display: grid;
@@ -492,6 +505,9 @@ section{
     } */
 }
 @media (max-width: 768px){
+    .spinner{
+        width: 25rem;
+    }
    .header #menu-btn{
     display: inline-block;
    }
@@ -522,8 +538,8 @@ section{
 
 @media (max-width: 450px){
     .spinner{
-        width: 24rem;
-        height: 7rem;
+        width: 22rem;
+        height: 9rem;
     }
     .category h1:first-child{
         font-size: 5rem;

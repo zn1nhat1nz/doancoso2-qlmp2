@@ -1,0 +1,22 @@
+
+a{
+    text-decoration: none;
+}
+.info2, .status2{
+    padding: 12px;
+    border: 0.02rem outset gray;
+}
+.header{
+    background: linear-gradient(to right,cyan,red);
+}
+
+/* .main{
+    float: left;
+    min-width:25%;
+    padding: 2rem;
+} */
+
+.main{
+    position: relative;
+    max-width: 25%;
+}

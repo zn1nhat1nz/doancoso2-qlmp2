@@ -1,5 +1,6 @@
-<?
+<?php
    include '../pages/connectdb.php';
+   
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,9 +16,9 @@
         <div class="right"></div>
         <div class="bot"></div>
         <div class="left"></div>
-            <form action="<?php echo $_SERVER['PHP_SEFL'];?>" method="post">
+            <form action="login.php?do=login" method="post">
             
-            <h1 style="text-align: center;">Đăng nhập</h1>
+            <h1 style="text-align: center;color: white;">Đăng nhập</h1>
                 <div class="inputBox">
                     <span></span>
                     <input type="text" name="user" placeholder="Tài khoản" required="required">
@@ -34,23 +35,34 @@
             </form>
     </div>
      <?php
+       session_start();
         $btn = filter_input(INPUT_POST,'sign-in');
-        if(!empty($btn) && $btn="Đăng nhập"){
              $username = filter_input(INPUT_POST,'user'); 
              $password = filter_input(INPUT_POST,'password');
+        if(!empty($btn) && $btn="Đăng nhập"){
+             
              $link = new mysqli('localhost','root','','dacs2_cosmetic');
-            $query = "SELECT*FROM accounttb";
+            $query = "SELECT*FROM account where useracc='$username'";
             $result = mysqli_query($link,$query);
             if(mysqli_num_rows($result)>0){
               while($row = mysqli_fetch_array($result)){
                  $uid = $row['user_id'];
-                 $un  = $row['user_name'];
+                 $uacc = $row['useracc'];
+                //  $un2 = $row['Uname'];    
                  $up = $row['user_password'];
+                 $un  = $row['user_name'];
                  $ue = $row['user_email'];
+                 $uaddress = $row['user_address'];
+                 $uimg = $row['user_image'];
+                 $ur = $row['role'];
+                 
               }
             } 
-            if($username== $un && $password==$up ){
-                // echo "Đăng nhập thành công";
+            if($username== $uacc && $password==$up ){
+                echo  $_SESSION['username'] = $un;
+                    if($ur==0){
+                        header("location:../pages");
+                     }     
             }
             // else die("Thất bại");
         }

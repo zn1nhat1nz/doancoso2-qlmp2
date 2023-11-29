@@ -1,17 +1,21 @@
 body{
-    background: linear-gradient(to right, pink,cyan, violet, rgb(228, 123, 123) );
+    /* background: linear-gradient(to right, pink,cyan, violet, rgb(228, 123, 123) ); */
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    /* background: linear-gradient(to right,black,#5f4385); */
+    background-image: url(../image/Black-Galaxy-Wallpapers.jpg);
+    background-size: cover;
 }
 .boxLogin{
     position: relative;
     /* padding: 5rem; */
-    box-shadow: 2px 2px 4px white,
+    box-shadow: 2px 2px 4px #da558a,
                 -2px -2px 4px #2eb1b1;
-    border-radius: 20px 5px 20px 5px;
+    border-radius: 20px;
     overflow:hidden;
+    
 }
 /* .boxLogin::before{
     content: '';
@@ -61,6 +65,7 @@ body{
     border-radius: 20px;
     display: flex;
     flex-direction: column;
+    border: 0.2rem solid ;
 }
 input{
     font-size:1.5rem;
@@ -69,6 +74,7 @@ input{
     border:none;
     box-shadow: 2px 2px 2px white;
     border-radius:20px;
+    color: white;
 }
 span{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -82,9 +88,11 @@ input::placeholder{
     font-size: 1.3rem;
 }
 .sign-in{
-    background: #f4addbd4;
+    background: linear-gradient(to right,black,#7c397c,black);
     color: white;
+    font-family:Georgia, 'Times New Roman', Times, serif;
     cursor: pointer;
+    box-shadow: 0 1px  10px white;
 }
 .boxLogin form .links{
     display: flex;
@@ -105,7 +113,8 @@ input::placeholder{
     height: 3px;
     /* border: 2rem solid #222 ; */
     /* background: linear-gradient(to left, rgb(236 71 186) ,#f18bcd); */
-     background: linear-gradient(to left, rgb(0, 217, 255) ,rgb(8 109 141)); 
+     /* background: linear-gradient(to left, rgb(0, 217, 255) ,rgb(8 109 141));  */
+     background: linear-gradient(to left, white,white); 
     animation: ant-top 2s linear infinite;
 
 }
@@ -124,7 +133,10 @@ input::placeholder{
     height: 100%;
     width: 3px;
     /* background: linear-gradient(to bottom, rgb(89 246 225) ,rgb(8 109 141)); */
-    background: linear-gradient(to bottom, rgb(116, 176, 203),rgb(8 109 141));
+    /* background: linear-gradient(to bottom, rgb(116, 176, 203),rgb(8 109 141)); */
+    background: linear-gradient(to bottom, white,white); 
+     /* background: linear-gradient(to top, rgb(236 71 186) ,#f18bcd); */
+     
     animation: ant-right 2s linear infinite;
      animation-delay: 1s;
 }
@@ -143,7 +155,8 @@ input::placeholder{
     right: 0;
     width: 100%;
     height: 3px;
-    background: linear-gradient(to right, rgb(236 71 186) ,#f18bcd);
+    /* background: linear-gradient(to right, rgb(236 71 186) ,#f18bcd); */
+    background: linear-gradient(to right, white,white); 
     animation: ant-bot 2s linear infinite;
 
 }
@@ -161,7 +174,8 @@ input::placeholder{
     left: 0;
     width: 3px;
     height: 100%;
-    background: linear-gradient(to top, rgb(236 71 186) ,#f18bcd);
+    /* background: linear-gradient(to top, rgb(236 71 186) ,#f18bcd); */
+    background: linear-gradient(to top, white,white); 
     animation: ant-left 2s linear infinite;
 
 }
