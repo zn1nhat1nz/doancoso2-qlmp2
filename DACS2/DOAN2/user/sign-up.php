@@ -62,7 +62,7 @@
             else {
                
                
-                $query2 = "INSERT INTO account VALUES('','$username','$password','$email','','','','')";
+                $query2 = "INSERT INTO account VALUES('','$username','$password','$email','','','','1')";
                 mysqli_query($link,$query2) or die("Thêm dữ liệu thất bại");
             }
         }

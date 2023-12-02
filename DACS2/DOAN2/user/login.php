@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./login.css">
+    <link rel="stylesheet" href="">
 </head>
 <body>
     <div class="boxLogin">
@@ -59,10 +60,13 @@
               }
             } 
             if($username== $uacc && $password==$up ){
-                echo  $_SESSION['username'] = $un;
-                    if($ur==0){
+                  $_SESSION['username'] = $un;
+                    if($ur==1){
                         header("location:../pages");
                      }     
+                     if($ur==2){
+                        header("location:../modules/index1.php");
+                     }  
             }
             // else die("Thất bại");
         }
