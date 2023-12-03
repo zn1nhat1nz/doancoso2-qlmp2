@@ -13,6 +13,7 @@
     <h3>Welcome to admincp</h3>
    <div class="wraper">
     <?php
+            include '../pages/connectdb.php';
             include './header.php';
             include './menu.php'; echo '<br>';
             include './main.php'; echo '<br>';

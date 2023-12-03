@@ -3,5 +3,5 @@
         if(!$link){
      echo "Kết nối thất bại";
   }
-   // else echo "Kết nối thành công <br>";
+   //  else echo "Kết nối thành công <br>";
 ?>

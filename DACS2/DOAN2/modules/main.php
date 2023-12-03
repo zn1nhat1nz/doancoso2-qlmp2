@@ -9,6 +9,8 @@
             }
             if($chon =='quanlidanhmucsp'){
                 include("./quanlydanhmucsp/add.php");
+                include("./quanlydanhmucsp/lietke.php");
+
             }
             else {
                 include("./dashboard.php");
