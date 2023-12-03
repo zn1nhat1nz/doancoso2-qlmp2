@@ -534,6 +534,10 @@ section{
    .shop .box-container .box{
      margin-left: 0rem;
    }
+   .cart{
+    top: 10rem;
+    /* right: 5rem; */
+}
 }
 
 @media (max-width: 450px){
