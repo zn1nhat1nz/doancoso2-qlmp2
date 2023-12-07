@@ -15,6 +15,13 @@
             else if($chon =='quanlydanhmucsp' && $query=='sua'){
                 include("./quanlydanhmucsp/edit.php");
             }
+            if($chon =='quanlysp' && $query=='them'){
+                include("./quanlysp/add.php");
+                include("./quanlysp/lietke.php");
+            }
+            else if($chon =='quanlysp' && $query=='sua'){
+                include("./quanlysp/edit.php");
+            }
             else {
                 include("./dashboard.php");
             }
