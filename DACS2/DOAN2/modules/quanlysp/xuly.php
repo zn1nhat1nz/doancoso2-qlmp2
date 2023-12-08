@@ -1,3 +1,4 @@
+
 <?php
 include('../../pages/connectdb.php');
         $tensp = $_POST['tensp'];
@@ -13,9 +14,9 @@ include('../../pages/connectdb.php');
         $hinhanh = time().'_'.$hinhanh;
         $hinhanh_tmp = $_FILES['hinhanh']['tmp_name'];
         
-
+// echo $_POST['themsanpham'];
    if(isset($_POST['themsanpham'])){
-        $query_add = "INSERT INTO tbl_danhmuc(ten_sp,ma_sp,gia_sp,gia_sp_giam,soluong,hinhanh,tomtat,noidung,tinhtrang,id_danhmuc) VALUES 
+        $query_add = "INSERT INTO product (ten_sp,ma_sp,gia_sp,gia_sp_giam,soluong,hinhanh,tomtat,noidung,tinhtrang,id_danhmuc) VALUES 
         ('".$tensp."','".$masp."','".$giasp."','".$giaspgiam."','".$soluong."','".$hinhanh."','".$tomtat."','".$noidung."','".$tinhtrang."','3') ";
         move_uploaded_file($hinhanh,'uploads/'.$hinhanh);
         mysqli_query($link,$query_add) or die("Thêm thất bại");

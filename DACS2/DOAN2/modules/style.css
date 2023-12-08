@@ -38,3 +38,25 @@ h3{
     box-shadow: -2px -2px 4px black;
 }
 
+.account{
+    float: right;
+    /* justify-content: space-between; */
+    padding: 12px;
+}
+.account a:first-child{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: black;
+    margin-right: 20px;
+}
+.account a:last-child{
+    text-decoration: none;
+    text-transform: uppercase;
+    
+    text-shadow: 2px 2px 4px blue;
+    margin-left: 20px;
+}
+.account a:hover{ 
+    color: rgb(249, 130, 150);
+    
+}

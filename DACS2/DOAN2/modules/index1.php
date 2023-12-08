@@ -1,3 +1,7 @@
+<?php
+  session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +15,21 @@
 </head>
 <body style="background: url(../image/bg_admincp.jpg); background-size: cover;">
     <h3>Welcome to admincp</h3>
+   <div class="account">
+   <?php 
+        //  echo $un;
+        // echo $_SESSION['username'];
+        if(isset($_SESSION['username']) && $_SESSION['username']){
+            echo '<a href="" style="font-size:1rem; text-shadow: 2px 2px 4px red">Xin chào:</a>' . $_SESSION['username'];
+            // echo '<br>';
+            echo '<a href="../user/logout.php style:"margin-left:20px;"">Đăng xuất</a>';
+           }else {
+            echo '<a href="../user/login.php" style="font-size:2rem; text-shadow: 2px 2px 4px red">Đăng nhập</a>';
+           }
+        
+        ?>
+   </div>
+   <br><br>
    <div class="wraper">
     <?php
             include '../pages/connectdb.php';

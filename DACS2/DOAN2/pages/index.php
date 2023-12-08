@@ -276,6 +276,9 @@
         <a href="#" class="btn">Mua ngay</a>
         </div>
     </section>
+    <section class="footer">
+        <h1>Về chúng tôi</h1>
+    </section>
     <script src="../script/script.js"></script>
 </body>
 </html>
