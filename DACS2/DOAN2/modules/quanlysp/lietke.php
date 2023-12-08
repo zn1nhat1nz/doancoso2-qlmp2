@@ -1,5 +1,5 @@
 
-<h3>Danh sách danh mục</h3>
+<h3>Danh sách sản phẩm</h3>
     <table style="width: 100%; box-shadow: 2px 2px 2px black, -2px -2px 2px pink;" border="1" class="table table-hover">
            <tr>
                 <th style="text-align: center;">ID sản phẩm</th>
@@ -18,6 +18,7 @@
     <?php 
    
     $query = "SELECT * FROM product ";
+
     $result = mysqli_query($link,$query);
     if(mysqli_num_rows($result)>0){
         while($row = mysqli_fetch_array($result)){
@@ -33,7 +34,7 @@
             $tinhtrang = "";
            if($row['tinhtrang']==1){
              $tinhtrang = "Kích hoạt";
-           } else $tinhtrang = "Ẩn";
+           } else {$tinhtrang = "Ẩn";}
             // $loaisp = $row['danhmucsp'];
              echo "</tr>";
              echo "<tr>";
@@ -42,14 +43,15 @@
              echo "<td > $masp </td>";
              echo "<td > $giasp </td>";
              echo "<td > $giaspgiam </td>";
-             echo "<td> $soluong </td>";
-             echo "<td > $hinhanh </td>";
+             echo "<td > $soluong </td>";
+             echo '<td> <img src="../modules/quanlysp/uploads/'.$row['hinhanh'].'" width="100px"> </td>';
              echo "<td > $tomtat </td>";
              echo "<td> $noidung </td>"; 
              echo "<td >    </td>";
              echo "<td> $tinhtrang </td>";
-             echo "<td style='text-align:center';> <a href='./quanlysp/xuly.php?idsanpham='' class='xoabtn'>Xóa</a> ||
-                    <a href='?action=quanlysp&query=sua&idsanpham='' class='suabtn'>Sửa</a> </td>";
+            //  echo "<td>$idsp</td>";
+             echo "<td style='text-align:center';> <a href='./quanlysp/xuly.php?idsanpham=$idsp'; class='xoabtn'>Xóa</a>||
+                    <a href='?action=quanlysp&query=sua&idsanpham=$idsp' class='suabtn'>Sửa</a> </td>";
              echo "</tr>";
              
         }
@@ -57,4 +59,4 @@
   
 ?>     
     </table>
-    <link rel="stylesheet" href="">
+    <!-- <link rel="stylesheet" href="./uploads/"> -->

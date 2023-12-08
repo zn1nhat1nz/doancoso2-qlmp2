@@ -1,6 +1,6 @@
 <?php
 //    include('../../pages/connectdb.php');
-    
+    // echo '$_GET[iddanhmuc]';
      $query_edit = "SELECT * FROM tbl_danhmuc WHERE id_danhmuc='$_GET[iddanhmuc]' LIMIT 1";
      $result = mysqli_query($link,$query_edit);
     //  if(mysqli_num_rows($result)>0){

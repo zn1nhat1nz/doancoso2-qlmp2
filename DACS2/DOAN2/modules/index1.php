@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Trang ADMIN</title>
    
     <link rel="stylesheet" href="npm i bootstrap@5.3.2">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -22,7 +22,7 @@
         if(isset($_SESSION['username']) && $_SESSION['username']){
             echo '<a href="" style="font-size:1rem; text-shadow: 2px 2px 4px red">Xin chào:</a>' . $_SESSION['username'];
             // echo '<br>';
-            echo '<a href="../user/logout.php style:"margin-left:20px;"">Đăng xuất</a>';
+            echo '<a href="../user/logout.php">Đăng xuất</a>';
            }else {
             echo '<a href="../user/login.php" style="font-size:2rem; text-shadow: 2px 2px 4px red">Đăng nhập</a>';
            }
