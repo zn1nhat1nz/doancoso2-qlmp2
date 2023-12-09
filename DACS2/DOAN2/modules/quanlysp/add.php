@@ -9,39 +9,39 @@
 <table class="table table-hover" style="box-shadow: 2px 2px 2px pink, -2px -2px 2px black;">
     <form action="../../../../../web_dacs2/DACS2/DOAN2/modules/quanlysp/xuly.php" method="post" enctype="multipart/form-data">
         <tr >
-            <td>Tên sản phẩm</td>
+            <th>Tên sản phẩm</th>
             <td><input type="text" name="tensp"></td>
         </tr>
         <tr>
-            <td>Mã sản phẩm</td>
+            <th>Mã sản phẩm</th>
                 <td><input type="text" name="masp"></td>
         </tr>
         <tr>
-            <td>Giá sản phẩm</td>
+            <th>Giá sản phẩm</th>
                 <td><input type="text" name="giasp"></td>
         </tr>
         <tr>
-            <td>Giá sản phẩm giảm giá</td>
+            <th>Giá sản phẩm giảm giá</th>
                 <td><input type="text" name="giaspgiam"></td>
         </tr>
         <tr>
-            <td>Số lượng</td>
+            <th>Số lượng</th>
                 <td><input type="text" name="soluong"></td>
         </tr>
         <tr>
-            <td>Hình ảnh</td>
+            <th>Hình ảnh</th>
                 <td><input type="file" name="hinhanh"></td>
         </tr>
         <tr>
-            <td>Tóm tắt</td>
+            <th>Tóm tắt</th>
                 <td><textarea name="tomtat" id="" cols="30" rows="5"></textarea></td>
         </tr>
         <tr>
-            <td>Nội dung</td>
+            <th>Nội dung</th>
                 <td><textarea name="noidung" id="" cols="30" rows="5"></textarea>></td>
         </tr>
         <tr>
-            <td>Tình trạng</td>
+            <th>Tình trạng</th>
                 <td>
                     <select name="tinhtrang" id="">
                         <option value="0">Ẩn</option>
@@ -50,9 +50,11 @@
                 </td>
         </tr>
         <tr>
-           <td>Danh mục sản phẩm</td>
+           <th>Danh mục sản phẩm</th>
            <td>
-           
+
+                      
+                    </select>
               <select name="danhmucsp" id="">
                       <!-- <option value="0">Nước hoa</option>
                       <option value="1">Chì kẻ mắt</option>
@@ -60,14 +62,17 @@
                       <option value="3">Kem nền</option>
                       <option value="4">Son môi</option> -->
                       <?php 
-                            if(mysqli_num_rows($result)>0){
+                        $query_danhmuc = "SELECT * FROM tbl_danhmuc ORDER BY id_danhmuc DESC";
+                        $result = mysqli_query($link,$query_danhmuc);
+                            // if(mysqli_num_rows($result)>0){
                                 while($row = mysqli_fetch_array($result)){
-                                   echo  $name = $row['tendanhmuc'];
-                                    // echo "<option value=".$name."></option>";
-                                    echo '<option value="'.$row['tendanhmuc'].'";style="width:200px"></option>';
-                                }
+                                 echo  $id =  $row['id_danhmuc']
+                               ?>
+                               <option value="<?php echo $id ?>"><?php echo $row['tendanhmuc'] ?></option>
+                               <?php
                             }
-                      ?>
+                            ?>
+                      
                     </select>
             </td> 
         </tr>

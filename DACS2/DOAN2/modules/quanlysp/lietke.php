@@ -17,7 +17,7 @@
            </tr> 
     <?php 
    
-    $query = "SELECT * FROM product ";
+    $query = "SELECT * FROM product,tbl_danhmuc WHERE product.id_danhmuc = tbl_danhmuc.id_danhmuc ORDER BY id_sp ";
 
     $result = mysqli_query($link,$query);
     if(mysqli_num_rows($result)>0){
@@ -32,10 +32,11 @@
             $tomtat = $row['tomtat'];
             $noidung = $row['noidung'];
             $tinhtrang = "";
+            $loaisp = $row['tendanhmuc'];
            if($row['tinhtrang']==1){
              $tinhtrang = "Kích hoạt";
            } else {$tinhtrang = "Ẩn";}
-            // $loaisp = $row['danhmucsp'];
+            
              echo "</tr>";
              echo "<tr>";
              echo "<td>$idsp</td>";
@@ -47,7 +48,7 @@
              echo '<td> <img src="../modules/quanlysp/uploads/'.$row['hinhanh'].'" width="100px"> </td>';
              echo "<td > $tomtat </td>";
              echo "<td> $noidung </td>"; 
-             echo "<td >    </td>";
+             echo "<td >  $loaisp  </td>";
              echo "<td> $tinhtrang </td>";
             //  echo "<td>$idsp</td>";
              echo "<td style='text-align:center';> <a href='./quanlysp/xuly.php?idsanpham=$idsp'; class='xoabtn'>Xóa</a>||

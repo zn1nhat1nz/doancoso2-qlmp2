@@ -37,7 +37,11 @@ h3{
 .table td{
     box-shadow: -2px -2px 4px black;
 }
-
+.table th{
+    /* box-shadow: 0 2px 4px black; */
+    /* background: red; */
+    box-shadow: -2px -2px 4px black;
+}
 .account{
     float: right;
     /* justify-content: space-between; */
