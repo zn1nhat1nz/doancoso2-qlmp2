@@ -28,6 +28,7 @@
             $giasp = $row['gia_sp'];
             $giaspgiam = $row['gia_sp_giam'];
             $soluong = $row['soluong'];
+            $hinhanhloai = $row['hinhanhloai'];
             $hinhanh = $row['hinhanh'];
             $tomtat = $row['tomtat'];
             $noidung = $row['noidung'];
@@ -45,13 +46,13 @@
              echo "<td > $giasp </td>";
              echo "<td > $giaspgiam </td>";
              echo "<td > $soluong </td>";
-             echo '<td> <img src="../modules/quanlysp/uploads/'.$row['hinhanh'].'" width="100px"> </td>';
+             echo '<td> <img src="../modules/quanlysp/uploads/'.$hinhanh.'" width="100px"> </td>';
              echo "<td > $tomtat </td>";
              echo "<td> $noidung </td>"; 
              echo "<td >  $loaisp  </td>";
              echo "<td> $tinhtrang </td>";
             //  echo "<td>$idsp</td>";
-             echo "<td style='text-align:center';> <a href='./quanlysp/xuly.php?idsanpham=$idsp'; class='xoabtn'>Xóa</a>||
+             echo "<td style='text-align:center';> <a href='./quanlysp/xuly.php?idsanpham=$idsp'; class='xoabtn'>Xóa</a> <br></br>
                     <a href='?action=quanlysp&query=sua&idsanpham=$idsp' class='suabtn'>Sửa</a> </td>";
              echo "</tr>";
              

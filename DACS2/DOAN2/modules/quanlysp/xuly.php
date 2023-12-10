@@ -78,11 +78,11 @@ include('../../pages/connectdb.php');
             {
                 while($row = mysqli_fetch_array($result))
                 {
-               //   echo $hinhanh = $row['hinhanh'];   
+                  echo $hinhanh = $row['hinhanh'];   
                 }
             } 
             $query_update = "UPDATE product SET ten_sp='".$tensp."',ma_sp = '".$masp."',gia_sp='".$giasp."',gia_sp_giam = '".$giaspgiam."',
-            soluong='".$soluong."',hinhanh='".$hinhanh."',tomtat='".$tomtat."',noidung = '".$noidung."',tinhtrang='".$tinhtrang."',id_danhmuc  = '".$loaisp."' WHERE id_sp='$_GET[idsanpham]' ";
+            soluong='".$soluong."',tomtat='".$tomtat."',noidung = '".$noidung."',tinhtrang='".$tinhtrang."',id_danhmuc  = '".$loaisp."' WHERE id_sp='$_GET[idsanpham]' ";
             // move_uploaded_file($hinhanh_tmp,'uploads/'.$hinhanh);
          }
        mysqli_query($link,$query_update) or die("Sửa thất bại");

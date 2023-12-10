@@ -3,7 +3,7 @@
   <!-- <tr>
     <td col-span=2></td>
   </tr> -->
-    <form action="../../../../../web_dacs2/DACS2/DOAN2/modules/quanlydanhmucsp/xuly.php" method="post">
+    <form action="../../../../../web_dacs2/DACS2/DOAN2/modules/quanlydanhmucsp/xuly.php" method="post" enctype="multipart/form-data">
         <tr >
             <td>Tên danh mục</td>
             <td><input type="text" name="tendanhmuc"></td>
@@ -17,6 +17,10 @@
                 <!-- <td><button type="button" class="btn btn-success">Thêm</button></td>
             <td><button type="button" class="btn btn-warning">Sửa</button></td>
             <td><button type="button" class="btn btn-danger">Xóa</button></td> -->
+        </tr>
+        <tr>
+            <th>Hình ảnh</th>
+                <td><input type="file" name="hinhanh"></td>
         </tr>
         <tr>
             <!-- <td colspan="5"> <input type="submit" value="Thêm danh mục" name="themdanhmuc"></td> -->

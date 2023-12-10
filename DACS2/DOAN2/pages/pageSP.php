@@ -1,3 +1,7 @@
+
+
+
+
 <?php 
 //    include 'connectdb.php'
         session_start();
@@ -33,11 +37,11 @@
         
         <nav class="navbar">
                     
-                    <a href="#" class="navbar-link" data-nav-link>Trang chủ</a>
+                    <a href="../pages/" class="navbar-link" data-nav-link>Trang chủ</a>
                     <a href="#shop" class="navbar-link" data-nav-link>Cửa hàng</a>
                     <a href="#" class="navbar-link" data-nav-link>Mẫu hàng</a>
                     <a href="#" class="navbar-link" data-nav-link>Cộng tác</a>
-                    <a href="../modules/index1.php">Đi đến trang quản trị</a>
+
         </nav>
         <div class="icons">
             <div class="fa-solid fa-bars" id="menu-btn"></div>
@@ -57,38 +61,6 @@
            }
         ?>
     </section>
-    <section class="home" id="home">
-        <div class="slide active" style="background: url(../image/home.jpg) no-repeat;background-size: cover; background-position: center;">
-                <div class="content">
-                    <h1>CONTENT</h1>
-                    <h3>ákdnadasjfjbasdjbgadhjgfjhagfgadshfbjd <br>
-                        sajfgsdgfjhgasfgasjhgajhsf <br>
-                        sậhsfbajhsbfjasbfjasbfj
-                    </h3>
-                </div>
-        </div>
-        <div class="slide" style="background: url(../image/banner2.png) no-repeat;background-size: cover; background-position: center;">
-            <div class="content">
-                <span>CONTENT2</span>
-                <h3>ákdnadasjfjbasdjbgadhjgfjhagfgadshfbjd <br>
-                    sajfgsdgfjhgasfgasjhgajhsf <br>
-                    sậhsfbajhsbfjasbfjasbfj
-                </h3>
-            </div>
-     </div>
-     <div class="slide" style="background: url(../image/banner3.jpg) no-repeat; background-size: cover; background-position: center; ">
-         <div class="content">
-                <span>CONTENT3</span>
-                 <h3>ákdnadasjfjbasdjbgadhjgfjhagfgadshfbjd <br>
-                sajfgsdgfjhgasfgasjhgajhsf <br>
-                sậhsfbajhsbfjasbfjasbfj
-                </h3>
-            </div>
-        </div>
-        <div class="fa-solid fa-circle-chevron-left" id="pre-slide" onclick="prev()"></div>
-        <div class="fa-solid fa-circle-chevron-right" id="next-slide" onclick="next()"></div>
-    </section>
-
     <section class="category">
         <h1>Phân loại</h1>
          <?php 
@@ -127,7 +99,40 @@
     </section>
     <section class="shop" id="shop">
         <h1>Sản phẩm</h1>
-         <?php include('./sanpham.php'); ?>
+        <?php
+        include('./connectdb.php');
+        $loaisp = $_GET['id']; 
+        $query= "SELECT * FROM product WHERE id_danhmuc=$loaisp";  
+        $result = mysqli_query($link,$query);
+        while($row = mysqli_fetch_array($result)){
+             $tensp = $row['ten_sp'];
+             $hinhanh = $row['hinhanh'];
+             $gia = $row['gia_sp'];
+             $noidung = $row['noidung'];   
+?>
+<div class="box-container" style="height: 30rem;">
+            <div class="box">
+               <div class="product">
+                
+                <a href="#shop" id="">
+                    <img src="../modules/quanlysp/uploads/<?php echo $hinhanh; ?>" alt="" width="300px" height="300px">
+                </a>
+
+                <button class="fa-solid fa-cart-plus"></button>
+               </div>
+                        <div class="content">
+                    <h3><?php echo $tensp ?></h3>
+                    <div class="price"><span><?php echo $gia ?></span>VNĐ</div>
+                </div>
+            </div>
+            <div class="contentsp" style=" margin-bottom: 24rem;">
+               <h2 style="font-size: 3rem;">Về sản phẩm:</h2>
+               <p><?php echo $noidung ?></p>
+            </div>
+ </div>
+ <?php
+        }
+ ?>
         </div>
 
 
@@ -170,17 +175,6 @@
         </form>
     </section>
 
-    <section class="message" style="background: url(../image/banner.jpg) no-repeat;">
-        <div class="content">
-            <span>Ưu đãi <span>đặc biệt</span></span>
-        <h3>Giảm giá đến 30%</h3>
-        <p>Chỉ riêng mùa giáng sinh này, ưu đãi cực sốc.</p>
-        <a href="#" class="btn">Mua ngay</a>
-        </div>
-    </section>
-    <section class="footer">
-        <h1>Về chúng tôi</h1>
-    </section>
     <script src="../script/script.js"></script>
 </body>
 </html>
