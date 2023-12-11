@@ -15,12 +15,12 @@
             $hinhanh = $row['hinhanh'];
             $gia = $row['gia_sp'];
             $noidung = $row['noidung']; 
-        
+            $idsp = $row['id_sp'];
     ?>
             <div class="box">
                <div class="product">
                 
-                <a href="#shop" id="">
+                <a href="./chitietsp.php?idsp=<?php echo $idsp; ?>" id="">
                     <img src="../modules/quanlysp/uploads/<?php echo $hinhanh ?>" alt="" width="300px" height="300px">
                 </a>
                 <button class="fa-solid fa-cart-plus"></button>

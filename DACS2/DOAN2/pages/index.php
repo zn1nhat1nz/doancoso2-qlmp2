@@ -37,7 +37,7 @@
                     <a href="#shop" class="navbar-link" data-nav-link>Cửa hàng</a>
                     <a href="#" class="navbar-link" data-nav-link>Mẫu hàng</a>
                     <a href="#" class="navbar-link" data-nav-link>Cộng tác</a>
-                    <a href="../modules/index1.php">Đi đến trang quản trị</a>
+                    <a href="../modules/index1.php">Quản trị</a>
         </nav>
         <div class="icons">
             <div class="fa-solid fa-bars" id="menu-btn"></div>

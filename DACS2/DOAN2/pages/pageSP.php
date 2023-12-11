@@ -104,6 +104,7 @@
         $loaisp = $_GET['id']; 
         $query= "SELECT * FROM product WHERE id_danhmuc=$loaisp";  
         $result = mysqli_query($link,$query);
+        if(mysqli_num_rows($result)>0){
         while($row = mysqli_fetch_array($result)){
              $tensp = $row['ten_sp'];
              $hinhanh = $row['hinhanh'];
@@ -126,11 +127,20 @@
                 </div>
             </div>
             <div class="contentsp" style=" margin-bottom: 24rem;">
-               <h2 style="font-size: 3rem;">Về sản phẩm:</h2>
-               <p><?php echo $noidung ?></p>
+               <form action="" method="post">
+                        <h2 style="font-size: 3rem;">Về sản phẩm:</h2>
+                        <p style="font-size: 2rem;"><?php echo $noidung ?></p>
+                        <p style="font-size: 2rem;">Giá sản phẩm: <?php echo $gia ?><span> VND</span></p>
+               </form>
             </div>
  </div>
  <?php
+        } 
+        }
+        else{
+            echo '<div class="box-container" style="height: 30rem;">';
+            echo "<h2>Hiện chưa có sản phẩm</h2>";
+            echo '</div>';
         }
  ?>
         </div>
