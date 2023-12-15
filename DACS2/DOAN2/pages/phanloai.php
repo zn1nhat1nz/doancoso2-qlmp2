@@ -34,9 +34,18 @@
                     while($row = mysqli_fetch_array($result)){
                       $iddanhmuc = $row['id_danhmuc'];
                              $ten = $row['tendanhmuc'];
-                             $hinhanh = $row['hinhanhloai'];   
+                             $hinhanh = $row['hinhanhloai']; 
+                    if(isset($_SESSION['iduser']))  {
             ?>
-                <a href="../pages/pageSP.php?id=<?php echo $iddanhmuc; ?>" class="box">
+            
+                <a href="../pages/pageSP.php?iduser=<?php  echo $_SESSION['iduser'];  ?>&id=<?php echo $iddanhmuc; ?>" class="box">
+                <?php
+                    } else{
+                    ?>
+                    <a href="../pages/pageSP.php?id=<?php echo $iddanhmuc; ?>" class="box">
+                    <?php 
+                    }
+                    ?>
                 <img src="../modules/quanlydanhmucsp/uploads/<?php echo $hinhanh; ?>" alt="" width="200px" height="200px">
                 <h1><?php echo $ten ?></h1>
             </a>

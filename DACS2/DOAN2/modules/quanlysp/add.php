@@ -5,7 +5,7 @@
     $query = "SELECT id_danhmuc,tendanhmuc FROM tbl_danhmuc" ;
     $result = mysqli_query($link,$query);
 ?>
-<h3>Thêm sản phẩm</h3>
+<h3 style="color: white;">Thêm sản phẩm</h3>
 <table class="table table-hover" style="box-shadow: 2px 2px 2px pink, -2px -2px 2px black;">
     <form action="../../../../../web_dacs2/DACS2/DOAN2/modules/quanlysp/xuly.php" method="post" enctype="multipart/form-data">
         <tr >

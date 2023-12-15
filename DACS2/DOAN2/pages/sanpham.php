@@ -10,6 +10,9 @@
 ?>
 <div class="box-container">
     <?php 
+      if(isset($_SESSION['iduser'])){
+       $uid = $_SESSION['iduser'];;
+      }
           while($row = mysqli_fetch_array($result)){
             $tensp = $row['ten_sp'];
             $hinhanh = $row['hinhanh'];
@@ -17,19 +20,35 @@
             $noidung = $row['noidung']; 
             $idsp = $row['id_sp'];
     ?>
-            <div class="box">
+            
+           <!-- <form action="" method="post"> -->
+           <div class="box">
                <div class="product">
-                
-                <a href="./chitietsp.php?idsp=<?php echo $idsp; ?>" id="">
+               <?php 
+                if(isset($_SESSION['iduser'])){
+                    $uid = $_SESSION['iduser'];
+                    ?>
+              
+                <a href="./chitietsp.php?iduser=<?php echo $uid; ?>&idsp=<?php echo $idsp; ?>" id="">
+                     <?php      
+                        } else {
+                    ?>
+                        <a href="./chitietsp.php?&idsp=<?php echo $idsp; ?>" id="">
+                    <?php
+                         }
+                     ?>
                     <img src="../modules/quanlysp/uploads/<?php echo $hinhanh ?>" alt="" width="300px" height="300px">
                 </a>
-                <button class="fa-solid fa-cart-plus"></button>
+                <!-- <button class="fa-solid fa-cart-plus"></button> -->
                </div>
                 <div class="content">
                      <h3><?php echo $tensp ?></h3>
+                     <!-- <h4><?php echo $idsp ?></h4> -->
                     <div class="price"><span><?php echo $gia ?></span>VNĐ</div>
                 </div>
             </div>
+           <!-- </form> -->
+            
          <?php
                 }
           ?>   

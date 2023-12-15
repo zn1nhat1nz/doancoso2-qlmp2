@@ -1,9 +1,9 @@
-<?php 
+ <?php 
 //    include 'connectdb.php'
         session_start();
         // include '../user/login.php';
         include('./connectdb.php');
-?>
+?> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,52 +18,20 @@
 <body>
     
     <section id="header" class="header">
-        <div class="spinner"></div>
-        <div class="logo">
-            <i class="fa-solid fa-wand-magic-sparkles"> 
-                <!-- <span>
-                <canvas id="myCanvas" width="200" height="40"></canvas>
-            </span> -->
-            Phong Minh Cosmectics
-          
-        </i>
-            <!--  -->
-           
-        </div>
         
-        <nav class="navbar">
-                    
-                    <a href="#" class="navbar-link" data-nav-link>Trang chủ</a>
-                    <a href="#shop" class="navbar-link" data-nav-link>Cửa hàng</a>
-                    <a href="#" class="navbar-link" data-nav-link>Mẫu hàng</a>
-                    <a href="#" class="navbar-link" data-nav-link>Cộng tác</a>
-                    <a href="../modules/index1.php">Quản trị</a>
-        </nav>
-        <div class="icons">
-            <div class="fa-solid fa-bars" id="menu-btn"></div>
-            <i class="fa-solid fa-cart-shopping"></i>
-            <span class="count">0</span>
-        </div>
-        <div class="xoay"></div>
         <!-- <a href="../user/login.php" class="navbar-link user" data-nav-link style="font-weight: bold; color:red; text-shadow: 2px 2px 3px black;" >Đăng nhập</a> -->
-        <?php 
-        //  echo $un;
-        // echo $_SESSION['username'];
-           if(isset($_SESSION['username']) && $_SESSION['username']){
-            echo '<a href="../user/user_info/info.php" style="color:red">Xin chào:</a>' . $_SESSION['username'];
-            echo '<a href="../user/logout.php">Đăng xuất</a>';
-           }else {
-            echo '<a href="../user/login.php" style="font-size:2rem; text-shadow: 2px 2px 4px red">Đăng nhập</a>';
-           }
-        ?>
+          <?php  include('./header.php'); ?>
     </section>
     <section class="home" id="home">
         <div class="slide active" style="background: url(../image/home.jpg) no-repeat;background-size: cover; background-position: center;">
                 <div class="content">
                     <h1>CONTENT</h1>
-                    <h3>ákdnadasjfjbasdjbgadhjgfjhagfgadshfbjd <br>
-                        sajfgsdgfjhgasfgasjhgajhsf <br>
-                        sậhsfbajhsbfjasbfjasbfj
+                    <h3>Chào mừng bạn đến với Phong Minh Cosmectics  <br>
+                         Điểm đến hàng đầu cho sắc đẹp tự tin! <br>
+                         Chúng tôi tự hào là địa chỉ mua sắm trực tuyến <br>
+                         chuyên cung cấp các sản phẩm mỹ phẩm chất lượng hàng đầu <br>
+                         mang đến cho bạn trải nghiệm mua sắm đẳng cấp và tiện lợi.
+                        
                     </h3>
                 </div>
         </div>
@@ -134,12 +102,27 @@
     </section>
 
     <section class="cart">
-        <form action="" method="post">
+       <!-- <?php echo  $_SESSION['iduser']; ?> -->
+   <?php
+            if(isset($_SESSION['username']) && $_SESSION['username']){
+                $useracc = $_SESSION['username'];
+                if(isset( $_SESSION['iduser'])){
+                 $uid = $_GET['iduser'];
+                }
+          ?>  
+        <form action="./ttgiohang.php?iduser=<?php echo $uid ?> " method="post">
+        <?php } else { ?>
+            <form action="../giohang/giohang.php " method="post">
+        <?php      
+             }
+            ?>
+        
         <i class="fa-solid fa-xmark" style="cursor: pointer"></i>
             <h2>Giỏ hàng</h2>
             <table>
                 <thead>
                     <tr>
+                        <th>ID</th>
                         <th>Sản phẩm</th>
                         <th>Giá</th>
                         <th>Số lượng</th>
@@ -159,7 +142,7 @@
             </div>
            <div class="box">
            <div class="top"></div>
-           <button>Thanh toán</button>
+           <input type="submit" value="Đi đến trang thanh toán" class="thanhtoan" name="thanhtoan">
            <div class="bot"></div>
                 <div class="right"></div>
                     
@@ -168,19 +151,29 @@
             
            </div>
         </form>
-    </section>
-
-    <section class="message" style="background: url(../image/banner.jpg) no-repeat;">
-        <div class="content">
-            <span>Ưu đãi <span>đặc biệt</span></span>
-        <h3>Giảm giá đến 30%</h3>
-        <p>Chỉ riêng mùa giáng sinh này, ưu đãi cực sốc.</p>
-        <a href="#" class="btn">Mua ngay</a>
-        </div>
+       <?php 
+        //  $query = "SELECT*FROM account where useracc='$useracc'";
+        //  $result = mysqli_query($link,$query);
+        //  if(mysqli_num_rows($result)>0){
+        //    while($row = mysqli_fetch_array($result)){
+        //      //  $uid = $row['user_id'];
+        //       $uacc = $row['useracc'];
+        //      //  $un2 = $row['Uname'];    
+        //       $up = $row['user_password'];
+        //       $un  = $row['user_name'];
+        //       $ue = $row['user_email'];
+        //       $uaddress = $row['user_address'];
+        //       $uimg = $row['user_image'];
+        //       $ur = $row['role'];
+        //    } 
+          // }
+       include('./giohang.php'); ?>
     </section>
     <section class="footer">
-        <h1>Về chúng tôi</h1>
+            <?php include('./banner.php'); ?>
     </section>
+    
+
     <script src="../script/script.js"></script>
 </body>
 </html>

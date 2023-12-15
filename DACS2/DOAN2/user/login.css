@@ -87,13 +87,22 @@ input::placeholder{
     font-weight: bold;
     font-size: 1.3rem;
 }
-.sign-in{
+.sign-in,
+.sign-up,
+.bosung{
     background: linear-gradient(to right,black,#7c397c,black);
     color: white;
     font-family:Georgia, 'Times New Roman', Times, serif;
     cursor: pointer;
     box-shadow: 0 1px  10px white;
 }
+/* .sign-up{
+    background: linear-gradient(to right,black,#7c397c,black);
+    color: white;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    cursor: pointer;
+    box-shadow: 0 1px  10px white;
+} */
 .boxLogin form .links{
     display: flex;
     justify-content: space-between;

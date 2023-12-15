@@ -82,9 +82,10 @@ section{
     border-radius: 50%;
 }
 
-.header .icons i{
-    
-    box-shadow: 0 0 20px white;
+.header .icons a{
+    font-size: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 2px 2px 20px white;
 }
 
 .header .icons span{
@@ -409,12 +410,12 @@ section{
     height: 85vh;
     width: 40rem;
     background-color: rgb(218, 188, 218);
-    top: 7.5rem;
+    top: 6rem;
     right:-100%;
     overflow-y: scroll;
 }
 
-.cart button{
+.cart .thanhtoan{
     font-size: 1.5rem;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     padding: 2rem;
@@ -540,6 +541,33 @@ section{
     top: 10rem;
     /* right: 5rem; */
 }
+.ttbtn{
+    background:linear-gradient(to right, yellow, green) ;
+    font-weight: 12;
+    padding: 5px;
+    border: 0.1rem solid black ;
+    border-radius: 10px;
+    text-decoration: none;
+    color: black; 
+    font-size: 10px;
+}
+.xoabtn{
+    background:linear-gradient(to right, yellow, green) ;
+    font-weight: 12;
+    padding: 5px;
+    border: 0.1rem solid black ;
+    border-radius: 10px;
+    text-decoration: none;
+    color: black; 
+    font-size: 10px;
+}
+.ttbtn input{
+    background:linear-gradient(to right, yellow, green) ;
+    font-weight: bold;
+    border-radius: 10px;    
+    /* margin-bottom: 20px; */
+    cursor: pointer;
+}
 }
 
 @media (max-width: 450px){
@@ -560,4 +588,57 @@ section{
         top: 10rem;
         /* right: 5rem; */
     }
+    .ttbtn{
+        background:linear-gradient(to right, yellow, green) ;
+        font-weight: 12;
+        padding: 5px;
+        border: 0.1rem solid black ;
+        border-radius: 10px;
+        text-decoration: none;
+        color: black; 
+        font-size: 5px;
+    }
+    .xoabtn{
+        background: linear-gradient(to right, orange,red) ;
+        font-weight: bold;
+        padding: 5px;
+        border: 0.1rem solid black ;
+        border-radius: 10px;
+        text-decoration: none;
+        color: white;
+        font-size: 10px;
+    }
+    .ttbtn input{
+        background:linear-gradient(to right, yellow, green) ;
+        font-weight: bold;
+        border-radius: 10px;    
+        /* margin-bottom: 20px; */
+        cursor: pointer;
+    }
+}
+
+.xoabtn{
+    background: linear-gradient(to right, orange,red) ;
+    font-weight: bold;
+    padding: 5px;
+    border: 0.1rem solid black ;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+}
+.ttbtn{
+    background:linear-gradient(to right, yellow, green) ;
+    
+    /* padding: 0.5px; */
+    border: 0.1rem solid black ;
+    border-radius: 10px;
+    text-decoration: none;
+    color: black; 
+}
+.ttbtn input{
+    background:linear-gradient(to right, yellow, green) ;
+    font-weight: bold;
+    border-radius: 10px;    
+    /* margin-bottom: 20px; */
+    cursor: pointer;
 }

@@ -36,18 +36,19 @@
             </form>
     </div>
      <?php
+     include('../pages/connectdb.php');
        session_start();
         $btn = filter_input(INPUT_POST,'sign-in');
              $username = filter_input(INPUT_POST,'user'); 
              $password = filter_input(INPUT_POST,'password');
         if(!empty($btn) && $btn="Đăng nhập"){
              
-             $link = new mysqli('localhost','root','','dacs2_cosmetic');
+            //  $link = new mysqli('localhost','root','','dacs2_cosmetic');
             $query = "SELECT*FROM account where useracc='$username'";
             $result = mysqli_query($link,$query);
             if(mysqli_num_rows($result)>0){
               while($row = mysqli_fetch_array($result)){
-                 $uid = $row['user_id'];
+                  $uid = $row['id_user'];
                  $uacc = $row['useracc'];
                 //  $un2 = $row['Uname'];    
                  $up = $row['user_password'];
@@ -60,9 +61,12 @@
               }
             } 
             if($username== $uacc && $password==$up ){
-                  $_SESSION['username'] = $un;
+                  $_SESSION['username'] = $uacc;
+                  $_SESSION['name'] = $un;
+                  $_SESSION['iduser'] = $uid;
+                  $_SESSION['role'] = $ur;
                     if($ur==1){
-                        header("location:../pages");
+                        header("location:../pages?iduser=$uid");
                      }     
                      if($ur==2){
                         header("location:../modules/index1.php");

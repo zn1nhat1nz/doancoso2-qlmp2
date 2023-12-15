@@ -51,11 +51,12 @@ const cartbtn = document.querySelectorAll(".shop button");
        {
         var btnItem =  event.target
         var product = btnItem.parentElement.parentElement
+        var id = product.querySelector("h4").innerText
         var pimage = product.querySelector("img").src
         var pname = product.querySelector("h3").innerText
         var pprice = product.querySelector("span").innerText
-        // console.log(pprice)
-         addcart(pimage,pname,pprice)
+      //   console.log(id)
+         addcart(id,pimage,pname,pprice)
          cartTotal()
          deleteCart()
          changeTotal()
@@ -63,11 +64,11 @@ const cartbtn = document.querySelectorAll(".shop button");
     })
 })
  
-function addcart(pimage,pname,pprice){
+function addcart(id,pimage,pname,pprice){
     // tạo tr
     var addtr =  document.createElement("tr")
     // nội dung tr
-    var trContent = '<tr> <td style="max-width:20rem;"><img src="'+pimage+'" alt="" style="width:70px; height:70px;"> <span class="title">'+pname+'</span></td><td><p><span class="price">'+pprice+'</span><sup>đ</sup></p></td>  <td><input type="number" value="1" min="0" style="width:30px; outline: none;text-align: center; border: 0.2rem solid black"> </td> <td style="cursor: pointer;" class="delete">Xóa</td> </tr>'
+    var trContent = '<tr> <td>ID:'+id+'</td> <td style="max-width:20rem;"><img src="'+pimage+'" alt="" style="width:70px; height:70px;"><br> <span class="title">'+pname+'</span></td><td><p><span class="price">'+pprice+'</span><sup>đ</sup></p></td>  <td><input type="number" value="1" min="0" style="width:30px; outline: none;text-align: center; border: 0.2rem solid black"> </td> <td style="cursor: pointer;" class="delete">Xóa</td> </tr>'
     var cartItem = document.querySelectorAll("tbody tr")
     for(var i=0; i<cartItem.length;i++){
       var productTrung = document.querySelectorAll(".title")
@@ -99,7 +100,7 @@ function cartTotal(){
      var inputValue = cartItem[i].querySelector("input").value
      var productPrice = cartItem[i].querySelector(".price").innerHTML
     //   console.log(productPrice);
-    const total = inputValue*productPrice*1000
+    const total = inputValue*productPrice
        console.log(total);
           productCount += 1
          totalPrice += total

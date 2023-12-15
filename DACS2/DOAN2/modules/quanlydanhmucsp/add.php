@@ -1,4 +1,4 @@
-<h3>Thêm danh mục sản phẩm</h3>
+<h3 style="color: white;">Thêm danh mục sản phẩm</h3>
 <table class="table table-hover" style="box-shadow: 2px 2px 2px pink, -2px -2px 2px black;">
   <!-- <tr>
     <td col-span=2></td>
