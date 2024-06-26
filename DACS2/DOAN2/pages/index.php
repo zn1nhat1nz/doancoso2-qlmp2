@@ -25,7 +25,7 @@
     <section class="home" id="home">
         <div class="slide active" style="background: url(../image/home.jpg) no-repeat;background-size: cover; background-position: center;">
                 <div class="content">
-                    <h1>CONTENT</h1>
+                    <h1>Tự tin khoe sắc</h1>
                     <h3>Chào mừng bạn đến với Phong Minh Cosmectics  <br>
                          Điểm đến hàng đầu cho sắc đẹp tự tin! <br>
                          Chúng tôi tự hào là địa chỉ mua sắm trực tuyến <br>
@@ -37,20 +37,22 @@
         </div>
         <div class="slide" style="background: url(../image/banner2.png) no-repeat;background-size: cover; background-position: center;">
             <div class="content">
-                <span>CONTENT2</span>
-                <h3>ákdnadasjfjbasdjbgadhjgfjhagfgadshfbjd <br>
-                    sajfgsdgfjhgasfgasjhgajhsf <br>
-                    sậhsfbajhsbfjasbfjasbfj
-                </h3>
+            <h1>Tự tin khoe sắc</h1>
+                    <h3>Chào mừng bạn đến với Phong Minh Cosmectics  <br>
+                         Điểm đến hàng đầu cho sắc đẹp tự tin! <br>
+                         Chúng tôi tự hào là địa chỉ mua sắm trực tuyến <br>
+                         chuyên cung cấp các sản phẩm mỹ phẩm chất lượng hàng đầu <br>
+                         mang đến cho bạn trải nghiệm mua sắm đẳng cấp và tiện lợi.
             </div>
      </div>
      <div class="slide" style="background: url(../image/banner3.jpg) no-repeat; background-size: cover; background-position: center; ">
          <div class="content">
-                <span>CONTENT3</span>
-                 <h3>ákdnadasjfjbasdjbgadhjgfjhagfgadshfbjd <br>
-                sajfgsdgfjhgasfgasjhgajhsf <br>
-                sậhsfbajhsbfjasbfjasbfj
-                </h3>
+         <h1>Tự tin khoe sắc</h1>
+                    <h3>Chào mừng bạn đến với Phong Minh Cosmectics  <br>
+                         Điểm đến hàng đầu cho sắc đẹp tự tin! <br>
+                         Chúng tôi tự hào là địa chỉ mua sắm trực tuyến <br>
+                         chuyên cung cấp các sản phẩm mỹ phẩm chất lượng hàng đầu <br>
+                         mang đến cho bạn trải nghiệm mua sắm đẳng cấp và tiện lợi.
             </div>
         </div>
         <div class="fa-solid fa-circle-chevron-left" id="pre-slide" onclick="prev()"></div>

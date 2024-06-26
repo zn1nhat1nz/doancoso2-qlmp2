@@ -7,7 +7,7 @@
    if(isset($_GET['idsp'])){
     
     $idsp = filter_input(INPUT_GET,'idsp');
-    $query = "DELETE  FROM cart WHERE id_sp = $idsp";
+    $query = "DELETE  FROM wait ";
     
     mysqli_query($link,$query) or die("Xóa dữ liệu thất bại");
     //  echo "hâu";

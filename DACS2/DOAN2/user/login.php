@@ -65,12 +65,17 @@
                   $_SESSION['name'] = $un;
                   $_SESSION['iduser'] = $uid;
                   $_SESSION['role'] = $ur;
+                  if($ur==0){
+                    echo "<script> alert('Tài khoản đã bị cấm'); </script>";
+                 } 
                     if($ur==1){
                         header("location:../pages?iduser=$uid");
                      }     
                      if($ur==2){
                         header("location:../modules/index1.php");
                      }  
+            } else{
+                echo "<script> alert('Đăng nhập thất bại. Vui lòng kiểm tra tài khoản hoặc mật khẩu'); </script>";
             }
             // else die("Thất bại");
         }

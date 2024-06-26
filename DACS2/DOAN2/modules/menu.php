@@ -29,10 +29,10 @@
           <a class="nav-link active" aria-current="page" href="index1.php?action=quanlysp&query=them">Quản lí sản phẩm</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="index1.php?action=quanlybaiviet&query=them">Quản lí bài viết</a>
+          <a class="nav-link" href="index1.php?action=quanlybaiviet&query=them">Quản lí người dùng</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="index1.php?action=quanlydanhmucbaiviet&query=them">Quản lí danh mục bài viết</a>
+          <a class="nav-link" href="index1.php?action=quanlydonhang&query=cho">Đơn hàng chờ xác nhận</a>
         </li>
         <!-- <li class="nav-item">
           <a class="nav-link disabled" aria-disabled="true">Disabled</a>

@@ -18,5 +18,7 @@ a{
 
 .main{
     position: relative;
-    max-width: 25%;
+    border-radius: 10px;
+    max-width: 100%;
+    box-shadow: 2px 2px 5px black;
 }

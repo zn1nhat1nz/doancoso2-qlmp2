@@ -135,6 +135,22 @@ section{
 .header #menu-btn{
     display: none;
 }
+.header input{
+    
+ margin-top: 0.5rem;
+ height: 2.5rem;
+ margin-left: 2rem;
+ border-radius: 10px;
+ background-color: rgb(200, 192, 192);
+ box-shadow: 0 0 4px black;
+}
+.header input:first-child{
+    width: 30rem;
+}
+.header input:last-child{
+    cursor: pointer;
+    background: rgb(219, 175, 208);
+}
 /* .header .xoay{
     border-radius: 50%;
     width: 70px;
@@ -507,6 +523,12 @@ section{
         background-size: cover;
     } */
 }
+/* @media (max-width: 712px){
+    .spinner{
+        width: 25rem;
+    }
+}     */
+
 @media (max-width: 768px){
     .spinner{
         width: 25rem;

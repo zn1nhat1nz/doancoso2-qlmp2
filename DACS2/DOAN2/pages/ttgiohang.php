@@ -77,7 +77,7 @@
       <th scope="col">Hình ảnh sản phẩm</th>
       <th scope="col">Giá sản phẩm</th>
       <th scope="col">Số lượng</th>
-      <!-- <th>Thành tiền</th> -->
+      <th>Thành tiền</th>
       <th>Trạng thái</th>
     </tr>
   </thead>
@@ -95,26 +95,42 @@
               $gia = $row['p_price'];
               // $noidung = $row['noidung'];   
               $sl = $row['p_quantity'];
+              // $query2 = "SELECT *FROM product";
+              // $result2 = mysqli_query($link,$query2);
+              //   if(mysqli_num_rows($result2)>0){
+              //     while($row = mysqli_fetch_array($result2)){
+              //   echo    $quant = $_row['soluong'];
                 echo "<tr>";
                 echo "<td>$tensp</td>";
                 echo '<td style="text-align: center;"> <img src="../modules/quanlydanhmucsp/uploads/'.$hinhanh.'" width="100px"> </td>';
                 echo '<td style="text-align: center;"><span> '.number_format($gia,0,',',',') .'</span><sup>VNĐ</sup></td>';
-                echo '<td style="text-align: center;"><input name="quantity" type="number" value="'.$sl.'" min="0" style="width:30px; background:#ffffff1a;border: 0.2rem solid black"></td>';
-                // $total = $gia*$sl;
-                // echo '<td style="text-align: center;">'.$total.'</td>';
+                echo '<td style="text-align: center;">
+                           <a href="tangsl.php?iduser='.$uid.'&id='.$idsp.'">+</a>   
+                           <span>'.$sl.'</span>
+                           <a href="giamsl.php?iduser='.$uid.'&id='.$idsp.'">-</a>
+                     </td>';
+                // 
+    
+                
+                $total = $gia*$sl;
+                echo '<td style="text-align: center;">'.number_format($total,0,',',',').'</td>';
                 echo '<td style="text-align: center;"> <a href="./delete.php?idsp='.$idsp.'" class="xoabtn">Xóa</a> <br></br>
-                <a href="thanhtoan.php?id='.$idsp.'" class="ttbtn"><input type="submit" value="Thanh toán"></a> 
+                <a href="thanhtoan.php?iduser='.$uid.'&id='.$idsp.'" class="ttbtn">Thanh toán</a> 
                  </td>';
-            echo "</tr>";
-            
-             }
+            echo "</tr>";         
+                //   }
+                // }  
+            }
            } 
-           
+           else{
+            echo 'Giỏ hàng trống';
+           }
         ?>
         <!-- <input type="submit" value="Thanh toán"> -->
         </form>
-        <?php echo $a=$_POST['quantity'] ?>
+        <!-- <?php echo $a=$_POST['quantity'] ?> -->
      </tbody>   
+     <!-- <input name="quantity" type="number" value="'.$sl.'" min="0" style="width:30px; background:#ffffff1a;border: 0.2rem solid black">  -->
         </table>
                       <?php
                      }
@@ -126,7 +142,63 @@
           // include('./banner.php');        
  ?>     
  <br><br>
- <h1 style="font-size: 4rem;">Đang chờ xác nhận:</h1>
+ <h1 style="font-size: 4rem;">Đơn hàng của bạn:</h1>
+
+ <table class="table" border="1" >
+  <thead>
+    <tr>
+      <th scope="col">Tên sản phẩm</th>
+      <th scope="col">Hình ảnh sản phẩm</th>
+      <th scope="col">Số lượng</th>
+      <th>Thành tiền</th>
+      <th>Trạng thái</th>
+    </tr>
+  </thead>
+  <tbody?>
+        <form action="" method="post">
+        <?php
+     $query = "SELECT *FROM wait where id_user=$uid";
+     $result = mysqli_query($link,$query);
+    if(mysqli_num_rows($result)>0){
+    while($row = mysqli_fetch_array($result)){
+      // $idc = $row['id_cart'];
+     $idsp = $row['id_sp'];
+     $tensp = $row['p_name'];
+     $hinhanh = $row['p_image'];
+    //  $gia = $row['p_price'];
+     $sl = $row['p_quantity'];
+     $idsp = $row['id_sp'];
+     $iduser = $row['id_user'];
+     $status = $row['statusz'];
+     echo "<tr>";
+     echo "<td>$tensp</td>";
+     echo '<td style="text-align: center;"> <img src="../modules/quanlydanhmucsp/uploads/'.$hinhanh.'" width="100px"> </td>';
+     echo '<td style="text-align: center;">   
+                <span>'.$sl.'</span>
+          </td>';
+     $total = $gia*$sl;
+     echo '<td style="text-align: center;">'.number_format($total,0,',',',').'</td>';
+     if($status==0){
+      $st = 'Đang chờ xác nhận';
+       }
+    echo '<td style="text-align: center;" >
+        '.$st.'
+    </td>';
+    echo '<td>
+    <a href="" class="">Hủy đơn</a> </td>' ;
+    echo "</tr>";  
+    }
+  }else{
+    echo "Đơn hàng rỗng";
+  }
+ ?>
+        ?>
+        <!-- <input type="submit" value="Thanh toán"> -->
+        </form>
+        <!-- <?php echo $a=$_POST['quantity'] ?> -->
+     </tbody>   
+     <!-- <input name="quantity" type="number" value="'.$sl.'" min="0" style="width:30px; background:#ffffff1a;border: 0.2rem solid black">  -->
+        </table>
 </body>
 <!-- <link rel="stylesheet" href="./delete.php?idsp="> -->
 <!-- <input type="text" > -->

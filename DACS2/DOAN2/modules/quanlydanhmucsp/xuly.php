@@ -43,8 +43,8 @@ include('../../pages/connectdb.php');
    }else {
       echo $id = $_GET['iddanhmuc'];
        $query_delete = "DELETE FROM tbl_danhmuc WHERE id_danhmuc='".$id."'";
-       mysqli_query($link,$query_delete);
-      header('location:../index1.php?action=quanlydanhmucsp&query=them');
+       mysqli_query($link,$query_delete) or die('Xóa thất bại');
+      // header('location:../index1.php?action=quanlydanhmucsp&query=them');
    }
 ?>
 <!-- <link rel="stylesheet" href="../"> -->

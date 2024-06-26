@@ -22,6 +22,9 @@
             else if($chon =='quanlysp' && $query=='sua'){
                 include("./quanlysp/edit.php");
             }
+            if($chon =='quanlydonhang'){
+                include("./quanlydonhang/quanlydonhang.php");
+            }
             else {
                 include("./dashboard.php");
             }
